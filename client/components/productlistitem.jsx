@@ -1,12 +1,17 @@
 import React from 'react';
 
-function Product() {
+function Product(props) {
+  const product = props.product;
+
   return (
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">Product Name</h5>
-        <p className="card-text">$0.00</p>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+    <div className="col-sm-4 col-margin">
+      <div key={product.productId} className="card m-2 card-height">
+        <img src={product.image} className="card-img-top img-height" alt={product.name}/>
+        <div className="card-body">
+          <h5 className="card-title">{product.name}</h5>
+          <p className="card-text">{`$ ${(product.price.toFixed(2)) / (100)}`}</p>
+          <p className="card-text">{product.shortDescription}</p>
+        </div>
       </div>
     </div>
   );

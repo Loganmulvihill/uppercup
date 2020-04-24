@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './header';
-import ProductListItem from './productlistitem';
+// import ProductListItem from './productlistitem';
+import ProductList from './productlist';
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-        <ProductListItem />
+        <ProductList />
       </div>
     );
   }

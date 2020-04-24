@@ -22,13 +22,17 @@ app.get('/api/health-check', (req, res, next) => {
 app.get('/api/products', (req, res, next) => {
 
   const sql = `
-    select *
+    select "productId",
+          "name",
+          "price",
+          "image",
+          "shortDescription"
       from "products"
   `;
   db.query(sql)
     .then(result => {
-      const grades = result.rows;
-      res.json(grades);
+      const products = result.rows;
+      res.json(products);
     })
     .catch(err => next(err));
 });
