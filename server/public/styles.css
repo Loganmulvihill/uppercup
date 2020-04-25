@@ -1,0 +1,38 @@
+
+.img-height {
+  height:300px
+}
+
+
+.center {
+  display:flex;
+  justify-content:center;
+}
+
+
+.cards-container {
+  background-color:#F8F9FA;
+}
+
+.header-container {
+  background-color: #343A40;
+  color:white;
+  height:50px;
+  font-size:1.25rem;
+  display:flex;
+  align-items: center;
+}
+
+.header-icon {
+  color:white;
+  margin-right:2px;
+  margin-left:200px;
+}
+
+.card-height {
+  height:480px
+}
+
+.col-margin {
+margin-top:20px;
+}
