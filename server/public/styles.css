@@ -3,12 +3,14 @@
   height:300px
 }
 
+.product-details-img {
+height:350px;
+}
 
 .center {
   display:flex;
   justify-content:center;
 }
-
 
 .cards-container {
   background-color:#F8F9FA;

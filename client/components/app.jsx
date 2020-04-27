@@ -1,14 +1,30 @@
 import React from 'react';
 import Header from './header';
-import ProductList from './productlist';
+// import ProductList from './productlist';
+import Productdetails from './product-details';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       message: null,
-      isLoading: true
+      isLoading: true,
+      view: { name: 'catalog', params: {} }
     };
+  }
+
+  setView(name, params) {
+
+    // this.setState({ view.name, name: name });
+    this.setState({ view: { name: name, params: params } });
+    // this.setState({
+    //   view: {
+    //     this.state.view,
+    //     name,
+    //     params
+    //   }
+    // })
+
   }
 
   componentDidMount() {
@@ -24,7 +40,8 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-        <ProductList />
+        <Productdetails />
+        {/* // <ProductList /> */}
       </div>
     );
   }
