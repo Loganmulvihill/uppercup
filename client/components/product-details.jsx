@@ -7,30 +7,22 @@ export default class Productdetails extends React.Component {
     this.state = {
       product: null
     };
-    // this.getProduct = this.getProduct.bind(this);
-  }
-
-  getProduct() {
-    fetch('/api/products/3')
-      .then(res => res.json())
-      .then(product => this.setState({ product }))
-      .catch(err => console.error(err));
   }
 
   componentDidMount() {
-    this.getProduct();
-    // fetch('/api/products/1')
-    //   .then(res => res.json())
-    //   .then(product => this.setState({ product }))
-    //   .catch(err => console.error(err));
+    fetch(`/api/products/${this.props.params.productId}`)
+      .then(res => res.json())
+      .then(product => this.setState({ product }))
+      .catch(err => console.error(err));
   }
 
   render() {
     if (this.state.product !== null) {
       return (
         <div className="container mt-5 border rounded">
-          <div className="row mb-2 text-muted"> {'<'} Back to Catalog button         </div>
-
+          <button onClick={() => this.props.setView('catalog', {})} className="row mb-2 text-muted btn bg-transparent">
+            {'<'} Back to Catalog button
+          </button>
           <div className="row mb-2">
             <div className="col-5">
               <img src={this.state.product.image} className="card-img-top product-details-img" alt={this.state.product.name} />
@@ -43,11 +35,9 @@ export default class Productdetails extends React.Component {
               </div>
             </div>
           </div>
-
           <div className="row">
             <p className="card-text">{this.state.product.longDescription}</p>
           </div>
-
         </div>
       );
     } else {

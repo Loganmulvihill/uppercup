@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header';
-// import ProductList from './productlist';
+import ProductList from './productlist';
 import Productdetails from './product-details';
 
 export default class App extends React.Component {
@@ -11,20 +11,16 @@ export default class App extends React.Component {
       isLoading: true,
       view: { name: 'catalog', params: {} }
     };
+    this.setView = this.setView.bind(this);
   }
 
   setView(name, params) {
-
-    // this.setState({ view.name, name: name });
-    this.setState({ view: { name: name, params: params } });
-    // this.setState({
-    //   view: {
-    //     this.state.view,
-    //     name,
-    //     params
-    //   }
-    // })
-
+    this.setState({
+      view: {
+        name,
+        params
+      }
+    });
   }
 
   componentDidMount() {
@@ -36,14 +32,21 @@ export default class App extends React.Component {
   }
 
   render() {
-
-    return (
-      <div>
-        <Header />
-        <Productdetails />
-        {/* // <ProductList /> */}
-      </div>
-    );
+    if (this.state.view.name === 'details') {
+      return (
+        <div>
+          <Header />
+          <Productdetails setView={this.setView} params={this.state.view.params} />
+        </div>
+      );
+    } else if (this.state.view.name === 'catalog') {
+      return (
+        <div>
+          <Header />
+          <ProductList setView={this.setView} />
+        </div>
+      );
+    }
   }
 
 }

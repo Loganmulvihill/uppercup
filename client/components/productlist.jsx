@@ -29,7 +29,7 @@ export default class Productlist extends React.Component {
         <div className="row">
           {
             this.state.products.map(productData => {
-              return <Productlistitem key={productData.productId} product={productData} />;
+              return <Productlistitem key={productData.productId} product={productData} setView={this.props.setView} />;
             })
           }
         </div>
