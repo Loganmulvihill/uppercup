@@ -112,14 +112,30 @@ app.post('/api/cart', (req, res, next) => {
         throw new ClientError('This does not work', 400);
       }
       const sql = ` insert into "carts"("cartId", "createdAt")
-      values(default, default )
-      returning "cartId"`;
+        values(default, default )
+        returning "cartId"`;
+      console.log(product);
+    }).then({
 
+    }).then({
+
+    }).catch(err => {
+      console.log('double awesome');
+      console.error(err);
     });
-  // .then(result => {
-  //   const grade = result.rows[0];
-  //   res.json(grade);
-  // })
+  // //       if (!product) {
+  // //         throw new ClientError('This does not work', 400);
+  //       }
+  //       const sql = ` insert into "carts"("cartId", "createdAt")
+  //       values(default, default )
+  //       returning "cartId"`;
+
+// }
+});
+// .then(result => {
+//   const grade = result.rows[0];
+//   res.json(grade);
+// })
 // if (!newGrade.course) {
 //   return res.status(400).json({
 //     error: 'a course is required'
@@ -147,7 +163,7 @@ app.post('/api/cart', (req, res, next) => {
 //       error: 'An unexpected error occurred.'
 //     });
 //   });
-});
+// });
 
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
