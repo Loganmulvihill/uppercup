@@ -90,19 +90,17 @@ app.get('/api/cart', (req, res, next) => {
 // });
 
 app.post('/api/cart', (req, res, next) => {
-  const product = req.body;
   const productId = req.body.productId;
-  if (!parseInt(product.productId) < 0) {
+  if (parseInt(productId, 10) <= 0) {
     return res.status(400).json({
       error: 'product id must be positive'
     });
   }
 
   const sql = `
-  select "price"
-     where "productId" = $1
+     select "price"
      from "products"
-    returning *`;
+     where "productId" = $1`;
 
   const params = [productId];
   db.query(sql, params)
@@ -110,60 +108,43 @@ app.post('/api/cart', (req, res, next) => {
       const product = result.rows[0];
       if (!product) {
         throw new ClientError('This does not work', 400);
+      } else {
+        const sql = `
+      insert into "carts"("cartId", "createdAt")
+      values(default, default )
+      returning "cartId"`;
+        return db.query(sql)
+          .then(result2 => {
+            return {
+              cartId: result2.rows[0].cartId,
+              price: product.price
+            };
+          });
+        // .then(data => { console.log(data); });
       }
-      const sql = ` insert into "carts"("cartId", "createdAt")
-        values(default, default )
-        returning "cartId"`;
-      console.log(product);
-    }).then({
+    })
+    .then(data => {
+      // const { restaurantId } = req.params;
+      req.session.cartId = data.cartId;
+      const sql = `
+      insert into "cartItems" ("cartId", "productId", "price")
+      values ($1, $2, $3)
+      returning "cartItemId"`;
 
+      const params = [data.cartId, productId, data.price];
+      return db.query(sql, params)
+        .then(result => {
+          const cartItem = result.rows[0];
+          // console.log(product);
+        });
     }).then({
 
     }).catch(err => {
-      console.log('double awesome');
+      next(err);
       console.error(err);
     });
-  // //       if (!product) {
-  // //         throw new ClientError('This does not work', 400);
-  //       }
-  //       const sql = ` insert into "carts"("cartId", "createdAt")
-  //       values(default, default )
-  //       returning "cartId"`;
 
-// }
 });
-// .then(result => {
-//   const grade = result.rows[0];
-//   res.json(grade);
-// })
-// if (!newGrade.course) {
-//   return res.status(400).json({
-//     error: 'a course is required'
-//   });
-// }
-// if (!newGrade.name) {
-//   return res.status(400).json({
-//     error: 'a name is required'
-//   });
-// }
-// const sql =
-//   insert into "grades" ("name", "course", "grade")
-//   values ($1, $2, $3)
-//     returning *
-// `;
-// const params = [newGrade.name, newGrade.course, parseInt(newGrade.grade)];
-// db.query(sql, params)
-//   .then(result => {
-//     const grade = result.rows[0];
-//     res.json(grade);
-//   })
-//   .catch(err => {
-//     console.error(err);
-//     res.status(500).json({
-//       error: 'An unexpected error occurred.'
-//     });
-//   });
-// });
 
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
