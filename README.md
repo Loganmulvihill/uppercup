@@ -10,10 +10,11 @@ Coming Soon!
 ## Technologies Used
  - HTML
  - CSS
- - React
- - JavaScript
+ - React.js
+ - JavaScript (ES6)
  - Node.js
- - Fetch
+ - Express
+ - PostgreSQL
  - Bootstrap
  - Yelp Fusion API
    -- https://www.yelp.com/developers/documentation/v3/get_started
