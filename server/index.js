@@ -108,7 +108,7 @@ app.post('/api/cart', (req, res, next) => {
       const product = result.rows[0];
       if (!product) {
         throw new ClientError('This does not work', 400);
-      } else {
+      } else if (!req.session.cartId) {
         const sql = `
       insert into "carts"("cartId", "createdAt")
       values(default, default )
@@ -122,6 +122,7 @@ app.post('/api/cart', (req, res, next) => {
           });
         // .then(data => { console.log(data); });
       }
+      // }
     })
     .then(data => {
       // const { restaurantId } = req.params;
@@ -135,9 +136,25 @@ app.post('/api/cart', (req, res, next) => {
       return db.query(sql, params)
         .then(result => {
           const cartItem = result.rows[0];
-          // console.log(product);
+          return cartItem;
         });
-    }).then({
+    }).then(data => {
+
+      const sql = `select "c"."cartItemId",
+      "c"."price",
+      "p"."productId",
+      "p"."image",
+      "p"."name",
+      "p"."shortDescription"
+      from "cartItems" as "c"
+      join "products" as "p" using ("productId")
+      where "c"."cartItemId" = $1`;
+      const params = [data.cartItemId];
+
+      return db.query(sql, params)
+        .then(result => {
+          return res.status(201).json(result);
+        });
 
     }).catch(err => {
       next(err);
