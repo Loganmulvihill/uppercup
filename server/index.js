@@ -72,22 +72,31 @@ app.get('/api/products/:productId', (req, res, next) => {
 
 app.get('/api/cart', (req, res, next) => {
   db.query('select \'successfully connected\' as "message"')
-    .then(result => res.json([]))
+    .then(result => {
+
+      if (!req.session.cartId) {
+        res.json([]);
+      } else {
+        const params = [req.session.cartId];
+        const sql =
+            `select "c"."cartItemId",
+            "c"."price",
+            "p"."productId",
+            "p"."image",
+            "p"."name",
+            "p"."shortDescription"
+            from "cartItems" as "c"
+            join "products" as "p" using("productId")
+            where "c"."cartId" = $1`;
+        return db.query(sql, params)
+          .then(result => {
+            return res.json(result.rows);
+          });
+      }
+
+    })
     .catch(err => next(err));
 });
-
-// app.get('/api/cart', (req, res, next) => {
-
-//   const sql = `
-//     select *
-//       from "carts"
-//   `;
-//   db.query(sql)
-//     .then(result => {
-//       res.json(result.rows[0]);
-//     })
-//     .catch(err => next(err));
-// });
 
 app.post('/api/cart', (req, res, next) => {
   const productId = req.body.productId;
@@ -108,6 +117,11 @@ app.post('/api/cart', (req, res, next) => {
       const product = result.rows[0];
       if (!product) {
         throw new ClientError('This does not work', 400);
+      } else if (req.session.cartId) {
+        return {
+          cartId: req.session.cartId,
+          price: product.price
+        };
       } else if (!req.session.cartId) {
         const sql = `
       insert into "carts"("cartId", "createdAt")
@@ -120,12 +134,9 @@ app.post('/api/cart', (req, res, next) => {
               price: product.price
             };
           });
-        // .then(data => { console.log(data); });
       }
-      // }
     })
     .then(data => {
-      // const { restaurantId } = req.params;
       req.session.cartId = data.cartId;
       const sql = `
       insert into "cartItems" ("cartId", "productId", "price")
@@ -153,7 +164,7 @@ app.post('/api/cart', (req, res, next) => {
 
       return db.query(sql, params)
         .then(result => {
-          return res.status(201).json(result);
+          return res.status(201).json(result.rows[0]);
         });
 
     }).catch(err => {
