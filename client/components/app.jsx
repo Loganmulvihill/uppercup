@@ -9,9 +9,25 @@ export default class App extends React.Component {
     this.state = {
       message: null,
       isLoading: true,
+      cart: [],
       view: { name: 'catalog', params: {} }
     };
     this.setView = this.setView.bind(this);
+    this.getCartItems = this.getCartItems.bind(this);
+  }
+
+  getCartItems() {
+    // console.log('cheese');
+    // const options = {
+    //   method: 'GET',
+    //   headers: { 'Content-Type': 'application/json' }
+    // };
+
+    fetch('/api/cart')
+      .then(res => res.json())
+      .then(data => console.log(data))
+      // .then(data => this.setState({ cart: data }))
+      .catch(err => console.error(err));
   }
 
   setView(name, params) {
@@ -24,11 +40,13 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/health-check')
-      .then(res => res.json())
-      .then(data => this.setState({ message: data.message || data.error }))
-      .catch(err => this.setState({ message: err.message }))
-      .finally(() => this.setState({ isLoading: false }));
+    this.getCartItems();
+
+    // fetch('/api/health-check')
+    //   .then(res => res.json())
+    //   .then(data => this.setState({ message: data.message || data.error }))
+    //   .catch(err => this.setState({ message: err.message }))
+    //   .finally(() => this.setState({ isLoading: false }));
   }
 
   render() {
