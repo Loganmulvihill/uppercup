@@ -18,15 +18,8 @@ export default class App extends React.Component {
   }
 
   getCartItems() {
-    // console.log('cheese');
-    // const options = {
-    //   method: 'GET',
-    //   headers: { 'Content-Type': 'application/json' }
-    // };
-
     fetch('/api/cart')
       .then(res => res.json())
-      // .then(data => console.log(data))
       .then(data => this.setState({ cart: data }))
       .catch(err => console.error(err));
   }
@@ -40,8 +33,7 @@ export default class App extends React.Component {
 
     fetch('/api/cart', options)
       .then(res => res.json())
-      // .then(data => console.log(data))
-      .then(data => this.setState({ cart: data }))
+      .then(data => this.setState(({ cart: this.state.cart.concat(data) })))
       .catch(err => console.error(err));
   }
 
@@ -57,11 +49,11 @@ export default class App extends React.Component {
   componentDidMount() {
     this.getCartItems();
 
-    // fetch('/api/health-check')
-    //   .then(res => res.json())
-    //   .then(data => this.setState({ message: data.message || data.error }))
-    //   .catch(err => this.setState({ message: err.message }))
-    //   .finally(() => this.setState({ isLoading: false }));
+    fetch('/api/health-check')
+      .then(res => res.json())
+      .then(data => this.setState({ message: data.message || data.error }))
+      .catch(err => this.setState({ message: err.message }))
+      .finally(() => this.setState({ isLoading: false }));
   }
 
   render() {
