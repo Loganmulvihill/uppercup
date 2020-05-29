@@ -93,6 +93,19 @@ app.get('/api/cart', (req, res, next) => {
   }
 });
 
+app.post('/api/orders', (req, res, next) => {
+  req.session.save();
+  if (!req.session.cartId) {
+    return res.status(400).json({
+      error: console.log(req.session.cartId)
+    });
+  } else {
+    return res.status(400).json({
+      error: 'This call is working'
+    });
+  }
+});
+
 app.post('/api/cart', (req, res, next) => {
   const productId = req.body.productId;
   if (parseInt(productId, 10) <= 0) {
