@@ -37,3 +37,16 @@ height:350px;
 .col-margin {
 margin-top:20px;
 }
+
+.cart-item-img {
+  height:300px;
+  width:300px;
+}
+
+.display-none {
+  display:none;
+}
+
+.display-message {
+  display:block;
+}
