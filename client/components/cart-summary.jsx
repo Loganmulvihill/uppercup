@@ -14,6 +14,14 @@ function CartSummary(props) {
   } else {
     noItemsClass = 'display-none';
   }
+
+  let checkoutItemsClass = null;
+  if (cart.length <= 0) {
+    checkoutItemsClass = 'display-none';
+  } else {
+    checkoutItemsClass = 'display-message';
+  }
+
   return (
     <div className="container cards-container">
       <button onClick={() => props.setView('catalog', {})} className="row mb-2 text-muted btn bg-transparent">
@@ -28,7 +36,10 @@ function CartSummary(props) {
           })
         }
       </div>
-      <h1 className="pb-4">{`Item Total $${total}`}</h1>
+      <div className="d-flex justify-content-between align-items-center">
+        <h1 className="pb-4">{`Item Total $${total}`}</h1>
+        <button type="button" onClick={() => props.setView('checkout', {})} className={`btn btn-primary ${checkoutItemsClass}`}>Checkout</button>
+      </div>
     </div>
 
   );
