@@ -93,6 +93,42 @@ app.get('/api/cart', (req, res, next) => {
   }
 });
 
+app.post('/api/orders', (req, res, next) => {
+  if (!req.session.cartId) {
+    return res.status(400).json({
+      error: 'No cart id'
+    });
+  }
+  if (!req.body.name) {
+    return res.status(400).json({
+      error: 'Must provide a name.'
+    });
+  }
+  if (!req.body.creditCard) {
+    return res.status(400).json({
+      error: 'Must provide a credit card.'
+    });
+  }
+  if (!req.body.shippingAddress) {
+    return res.status(400).json({
+      error: 'Must provide a shipping address.'
+    });
+  }
+  const params = [req.session.cartId, req.body.name, req.body.creditCard, req.body.shippingAddress];
+  const sql = `
+      insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
+      values ($1, $2, $3, $4)
+      returning *`;
+  return db.query(sql, params)
+    .then(result => {
+      delete req.session.cartId;
+      res.status(201).json(result.rows[0]);
+    }).catch(err => {
+      next(err);
+      console.error(err);
+    });
+});
+
 app.post('/api/cart', (req, res, next) => {
   const productId = req.body.productId;
   if (parseInt(productId, 10) <= 0) {
