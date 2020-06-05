@@ -30,7 +30,7 @@ export default class CheckoutForm extends React.Component {
     const cart = this.props.cart;
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
-      total += cart[i].price.toFixed(2) / (100);
+      total += cart[i].price;
     }
     return total;
   }
@@ -40,7 +40,7 @@ export default class CheckoutForm extends React.Component {
       <div className="container">
         <div className="col">
           <h1>My Cart</h1>
-          <h1 className="pb-4">{`Item Total $${this.getTotal()}`}</h1>
+          <h1 className="pb-4">{`Item Total $${((this.getTotal()) / 100).toFixed(2)}`}</h1>
           <form>
             <div className="form-group">
               <label htmlFor="exampleFormControlInput1">Name</label>

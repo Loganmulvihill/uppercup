@@ -5,7 +5,7 @@ function CartSummary(props) {
   const cart = props.cart;
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
-    total += cart[i].price.toFixed(2) / (100);
+    total += cart[i].price;
   }
 
   let noItemsClass = null;
@@ -25,7 +25,7 @@ function CartSummary(props) {
   return (
     <div className="container cards-container">
       <div className="row">
-        <button onClick={() => props.setView('catalog', {})} className="row mb-2 text-muted btn bg-transparent">
+        <button onClick={() => props.setView('catalog', {})} className="row mb-2 text-primary btn bg-transparent">
           {'<'} Back to Catalog button
         </button>
       </div>
@@ -33,16 +33,18 @@ function CartSummary(props) {
         <h1>My Cart</h1>
         <h2 className={`${noItemsClass}`}>No Items in your cart.</h2>
       </div>
-      <div className="row mb-2 d-flex justify-content-center">
+      <div className="d-flex flex-wrap justify-content-between mt-5">
         {
           cart.map(cartData => {
             return <CartSummaryItem key={cartData.cartItemId} cartItem={cartData} />;
           })
         }
       </div>
-      <div className="row d-flex justify-content-between align-items-center">
-        <h1 className="pb-4">{`Item Total $${total}`}</h1>
-        <button type="button" onClick={() => props.setView('checkout', {})} className={`btn btn-primary cart-summary-button ${checkoutItemsClass}`}>Checkout</button>
+      <div className="d-flex flex-nowrap justify-content-between">
+        <h3 className="mb-4">{`Item Total: $${(total / 100).toFixed(2)}`}</h3>
+        <div>
+          <button type="button" onClick={() => props.setView('checkout', {})} className={`btn btn-primary cart-summary-button ${checkoutItemsClass}`}>Checkout</button>
+        </div>
       </div>
     </div>
 
