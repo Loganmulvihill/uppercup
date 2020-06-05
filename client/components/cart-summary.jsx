@@ -24,21 +24,25 @@ function CartSummary(props) {
 
   return (
     <div className="container cards-container">
-      <button onClick={() => props.setView('catalog', {})} className="row mb-2 text-muted btn bg-transparent">
-        {'<'} Back to Catalog button
-      </button>
-      <h1>My Cart</h1>
-      <h2 className={`${noItemsClass}`}>No Items in your cart.</h2>
-      <div className="row mb-2">
+      <div className="row">
+        <button onClick={() => props.setView('catalog', {})} className="row mb-2 text-muted btn bg-transparent">
+          {'<'} Back to Catalog button
+        </button>
+      </div>
+      <div className="row">
+        <h1>My Cart</h1>
+        <h2 className={`${noItemsClass}`}>No Items in your cart.</h2>
+      </div>
+      <div className="row mb-2 d-flex justify-content-center">
         {
           cart.map(cartData => {
             return <CartSummaryItem key={cartData.cartItemId} cartItem={cartData} />;
           })
         }
       </div>
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="row d-flex justify-content-between align-items-center">
         <h1 className="pb-4">{`Item Total $${total}`}</h1>
-        <button type="button" onClick={() => props.setView('checkout', {})} className={`btn btn-primary ${checkoutItemsClass}`}>Checkout</button>
+        <button type="button" onClick={() => props.setView('checkout', {})} className={`btn btn-primary cart-summary-button ${checkoutItemsClass}`}>Checkout</button>
       </div>
     </div>
 

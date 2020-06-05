@@ -1,4 +1,6 @@
-
+body {
+  background-color:#F8F9FA;
+}
 .img-height {
   height:300px
 }
@@ -49,4 +51,26 @@ margin-top:20px;
 
 .display-message {
   display:block;
+}
+
+.overall-container {
+  height:100vh;
+  background-color:#F8F9FA;
+}
+
+@media screen and (min-width: 667px) {
+  .cart-item-img {
+  height:250px;
+  width:250px;
+  }
+  .cart-summary-button {
+    margin-bottom:20px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .cart-item-img {
+  height:300px;
+  width:300px;
+  }
 }
