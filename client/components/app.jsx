@@ -91,12 +91,14 @@ export default class App extends React.Component {
       return (
         <div>
           <Header setView={this.setView} cartItemCount={this.state.cart.length} />
-          <CartSummary cart={this.state.cart} setView={this.setView} />
+          <div className="container">
+            <CartSummary cart={this.state.cart} setView={this.setView} />
+          </div>
         </div>
       );
     } else if (this.state.view.name === 'checkout') {
       return (
-        <div>
+        <div className="overall-container">
           <Header setView={this.setView} cartItemCount={this.state.cart.length} />
           <CheckoutForm placeOrder={this.placeOrder} setView={this.setView} cart={this.state.cart} />
         </div>

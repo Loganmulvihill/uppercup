@@ -9,12 +9,11 @@ function Product(props) {
         <img src={product.image} className="card-img-top img-height" alt={product.name}/>
         <div className="card-body">
           <h5 className="card-title">{product.name}</h5>
-          <p className="card-text">{`$ ${(product.price.toFixed(2)) / (100)}`}</p>
+          <p className="card-text">{`$ ${(product.price / 100).toFixed(2)}`}</p>
           <p className="card-text">{product.shortDescription}</p>
         </div>
       </div>
     </div>
   );
 }
-
 export default Product;
