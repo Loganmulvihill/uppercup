@@ -25,14 +25,12 @@ export default class Productlist extends React.Component {
 
   render() {
     return (
-      <div className="container cards-container">
-        <div className="row">
-          {
-            this.state.products.map(productData => {
-              return <Productlistitem key={productData.productId} product={productData} setView={this.props.setView} />;
-            })
-          }
-        </div>
+      <div className="container d-flex flex-wrap justify-content-between cards-container mt-5 mb-5">
+        {
+          this.state.products.map(productData => {
+            return <Productlistitem key={productData.productId} product={productData} setView={this.props.setView} />;
+          })
+        }
       </div>
 
     );
