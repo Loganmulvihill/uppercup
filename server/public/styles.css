@@ -2,7 +2,8 @@ body {
   background-color:#F8F9FA;
 }
 .img-height {
-  height:300px
+  height:55%;
+  object-fit: contain;
 }
 
 .product-details-img {
@@ -72,5 +73,30 @@ margin-top:20px;
   .cart-item-img {
   height:300px;
   width:300px;
+  }
+}
+
+.card-width {
+  width:100%;
+}
+
+
+@media screen and (min-width: 375px) {
+  .card-width {
+  width:100%;
+  padding-top:10%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-width {
+  width:48%;
+  padding-top:0%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-width {
+  width:32%;
   }
 }
