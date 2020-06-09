@@ -4,6 +4,7 @@ import ProductList from './productlist';
 import Productdetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkoutForm';
+import AgreementModal from './agreement-modal';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -87,6 +88,7 @@ export default class App extends React.Component {
         <div>
           <Header setView={this.setView} cartItemCount={this.state.cart.length} />
           <ProductList setView={this.setView} />
+          <AgreementModal />
         </div>
       );
     } else if (this.state.view.name === 'cart') {
