@@ -38,9 +38,9 @@ export default class CheckoutForm extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="col">
-          <h1>My Cart</h1>
-          <h1 className="pb-4">{`Item Total $${((this.getTotal()) / 100).toFixed(2)}`}</h1>
+        <div className="col white-background pt-3 pb-3 mt-5 mb-5 shadow-sm border">
+          <h1>Checkout</h1>
+          <h2 className="pb-4">{`Item Total $${((this.getTotal()) / 100).toFixed(2)}`}</h2>
           <form>
             <div className="form-group">
               <label htmlFor="exampleFormControlInput1">Name</label>
@@ -53,6 +53,10 @@ export default class CheckoutForm extends React.Component {
             <div className="form-group">
               <label htmlFor="exampleFormControlTextarea1">Shipping Address</label>
               <textarea value={this.shippingAddress} onChange={this.changeShippingAddress} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div className="mt-3 d-flex">
+              <input className="mr-2 mt-1" type="checkbox" name="iAgree"/>
+              <label htmlFor="iAgree">I accept that this website is for demonstration purposes only, that no payment processing will happen, and that personal information such as names, addresses or real credit card numbers should not be used on submission of this form.</label>
             </div>
           </form>
           <div className="d-flex justify-content-between align-items-center">
