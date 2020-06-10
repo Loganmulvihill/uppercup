@@ -10,20 +10,18 @@ function AgreementModal(props) {
 
   return (
 
-    <div className={`agreement-modal container ${className}`}>
-      <div className=" pb-4 d-flex justify-content-center flex-column align-content-around agreement-modal-interior-container shadow">
-        <div className="w-100 match-icon">
-        </div>
-        <p className="text-center montserrat-500 lead brand-blue-text">Sorry this room <br /> has been closed</p>
+    <div className={`agreement-modal ${className}`}>
+      <div className="d-flex justify-content-center flex-column align-content-around agreement-modal-interior-container shadow p-2">
+        <h2 className="text-center">Welcome to Wicked Sales</h2>
         <div className="mt-3 d-flex">
           <input className="mr-2 mt-1" type="checkbox" name="iAgree" />
-          <label htmlFor="iAgree">I accept that this website is for demonstration purposes only, that no payment processing will happen, and that personal information such as names, addresses or real credit card numbers should not be used on submission of this form.</label>
+          <label htmlFor="iAgree">I accept that this website is for demonstration purposes only, that no payment processing will happen, and that personal information such as names, addresses or real credit card numbers should not be used on submission of the forms within this website.</label>
         </div>
         <button
           type="button"
           onClick={props.hideRoomClosedModal}
-          className="btn orange-rounded-button shadow-sm align-self-center">
-          Ok
+          className="btn shadow-sm align-self-center btn-primary mt-2">
+          Submit
         </button>
       </div>
     </div>
