@@ -7,7 +7,6 @@ body {
 }
 
 .product-details-img {
-/* height:350px; */
   height:60%;
   object-fit: contain;
 }
@@ -79,7 +78,6 @@ display:flex;
 }
 
 .agreement-modal {
-  display:flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -89,11 +87,9 @@ display:flex;
   z-index: 2;
 }
 
-
-
-
-
-
+.display-modal {
+  display:block;
+}
 
 @media screen and (min-width: 667px) {
   .cart-item-img {
@@ -140,7 +136,7 @@ display:flex;
 @media screen and (min-width: 667px) {
 .agreement-modal-interior-container {
   width: 50%;
-  height: 80%;
+  height: 90%;
   }
 }
 

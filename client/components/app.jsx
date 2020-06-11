@@ -13,12 +13,19 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       cart: [],
-      view: { name: 'catalog', params: {} }
+      view: { name: 'catalog', params: {} },
+      agreed: false
     };
     this.setView = this.setView.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.hideAgreementModal = this.hideAgreementModal.bind(this);
+  }
+
+  hideAgreementModal(event) {
+    this.setState({ agreed: true });
+    event.preventDefault();
   }
 
   getCartItems() {
@@ -88,7 +95,7 @@ export default class App extends React.Component {
         <div>
           <Header setView={this.setView} cartItemCount={this.state.cart.length} />
           <ProductList setView={this.setView} />
-          <AgreementModal />
+          <AgreementModal agreed={this.state.agreed} hideAgreementModal={this.hideAgreementModal} />
         </div>
       );
     } else if (this.state.view.name === 'cart') {
