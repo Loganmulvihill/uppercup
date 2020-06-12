@@ -20,7 +20,7 @@ export default class Productdetails extends React.Component {
     if (this.state.product !== null) {
       return (
         <div className="container mt-5 mb-5 border rounded white-background shadow-sm">
-          <button onClick={() => this.props.setView('catalog', {})} className=" text-muted btn bg-transparent pl-2 pr-2 pt-2">
+          <button onClick={() => this.props.setView('catalog', {})} className=" text-primary btn bg-transparent pl-2 pr-2 pt-2">
             {'<'} Back to Catalog button
           </button>
           <div className="row p-2 no-gutters">
