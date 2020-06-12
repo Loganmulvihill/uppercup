@@ -4,7 +4,7 @@ function Product(props) {
   const product = props.product;
 
   return (
-    <div key={product.productId} className="card shadow-sm card-width mb-3" onClick={() => props.setView('details', { productId: product.productId })}>
+    <div key={product.productId} className="card shadow-sm card-width mb-3 hvr-grow cursor-pointer" onClick={() => props.setView('details', { productId: product.productId })}>
       <img src={product.image} className="card-img-top img-height" alt={product.name}/>
       <div className="card-body">
         <h5 className="card-title">{product.name}</h5>
