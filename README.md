@@ -5,7 +5,7 @@
 A Full Stack Node.js and React shopping cart app.
 
 ## Live Demo
-Coming Soon!
+https://wicked-sales.loganmulvihill.com/
 
 ## Technologies Used
  - HTML
@@ -16,8 +16,6 @@ Coming Soon!
  - Express
  - PostgreSQL
  - Bootstrap
- - Yelp Fusion API
-   -- https://www.yelp.com/developers/documentation/v3/get_started
 
 ## Features
 1. User can view product list.
