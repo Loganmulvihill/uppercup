@@ -23,4 +23,4 @@ https://wicked-sales.loganmulvihill.com/
 3. User can add items to cart.
 
 ## Preview
- <img src="server/public/images/wicked-sales-example.gif">
+ <img src="server/public/images/uppercup-example.gif">
