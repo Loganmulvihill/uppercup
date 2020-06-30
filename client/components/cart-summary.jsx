@@ -26,7 +26,7 @@ function CartSummary(props) {
     <div className="container cards-container">
       <div className="row">
         <button onClick={() => props.setView('catalog', {})} className="row mb-2 text-primary btn bg-transparent">
-          {'<'} Back to Catalog button
+          {'<'} Back to Catalog
         </button>
       </div>
       <div className="row">
