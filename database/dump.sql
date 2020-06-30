@@ -1659,6 +1659,121 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 1428	3	6	830
 1429	4	1	2999
 1430	4	2	2595
+1431	5	1	2999
+1432	6	1	2999
+1433	7	1	2999
+1434	7	1	2999
+1435	7	1	2999
+1436	7	1	2999
+1437	8	1	2999
+1438	8	1	2999
+1439	9	1	2999
+1440	10	1	2999
+1441	10	1	2999
+1442	11	1	2999
+1443	12	1	2999
+1444	13	1	2999
+1445	14	2	2595
+1446	14	3	2900
+1447	15	2	2595
+1448	15	3	2900
+1449	15	2	2595
+1450	16	1	2999
+1451	17	2	2595
+1452	18	2	2595
+1453	19	2	2595
+1454	20	2	2595
+1455	20	2	2595
+1456	21	2	2595
+1457	22	2	2595
+1458	23	2	2595
+1459	23	3	2900
+1460	24	3	2900
+1461	24	3	2900
+1462	25	2	2595
+1463	25	1	2999
+1464	25	1	2999
+1465	25	2	2595
+1466	25	1	2999
+1467	25	2	2595
+1468	26	1	2999
+1469	26	3	2900
+1470	26	5	9900
+1471	26	6	830
+1472	26	1	2999
+1473	27	4	999
+1474	27	1	2999
+1475	27	5	9900
+1476	28	1	2999
+1477	29	1	2999
+1478	30	2	2595
+1479	30	2	2595
+1480	30	2	2595
+1481	30	1	2999
+1482	30	1	2999
+1483	30	1	2999
+1484	30	1	2999
+1485	30	1	2999
+1486	30	1	2999
+1487	30	1	2999
+1488	30	1	2999
+1489	30	1	2999
+1490	31	1	2999
+1491	31	2	2595
+1492	31	2	2595
+1493	31	2	2595
+1494	31	2	2595
+1495	31	2	2595
+1496	31	2	2595
+1497	31	2	2595
+1498	32	1	2999
+1499	33	1	2999
+1500	34	1	2999
+1501	35	1	2999
+1502	35	2	2595
+1503	35	2	2595
+1504	35	2	2595
+1505	35	2	2595
+1506	35	2	2595
+1507	35	2	2595
+1508	35	2	2595
+1509	35	2	2595
+1510	35	2	2595
+1511	35	2	2595
+1512	36	1	2999
+1513	37	1	2999
+1514	37	1	2999
+1515	37	1	2999
+1516	37	1	2999
+1517	37	1	2999
+1518	37	1	2999
+1519	37	1	2999
+1520	37	1	2999
+1521	37	1	2999
+1522	37	1	2999
+1523	37	1	2999
+1524	37	1	2999
+1525	37	1	2999
+1526	37	1	2999
+1527	37	1	2999
+1528	37	1	2999
+1529	37	1	2999
+1530	37	1	2999
+1531	37	1	2999
+1532	37	1	2999
+1533	38	1	2999
+1534	38	2	2595
+1535	38	3	2900
+1536	38	5	9900
+1537	38	4	999
+1538	38	6	830
+1539	39	3	2900
+1540	40	2	2595
+1541	40	2	2595
+1542	40	2	2595
+1543	40	3	2900
+1544	41	3	2900
+1545	41	2	2595
 \.
 
 
@@ -1671,6 +1786,38 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 2	2020-05-27 13:53:32.47788-05
 3	2020-05-28 13:46:42.492813-05
 4	2020-05-28 21:31:50.912014-05
+5	2020-05-29 13:16:34.756324-05
+6	2020-05-30 15:54:51.387625-05
+7	2020-06-01 11:08:46.738369-05
+13	2020-06-01 13:29:15.141329-05
+14	2020-06-03 11:05:41.228925-05
+15	2020-06-03 11:32:26.408894-05
+16	2020-06-03 13:43:15.355275-05
+17	2020-06-03 13:53:24.677122-05
+18	2020-06-03 13:54:40.192976-05
+19	2020-06-03 13:56:11.580704-05
+20	2020-06-03 13:56:58.967992-05
+21	2020-06-03 13:58:36.466701-05
+22	2020-06-03 15:03:45.218467-05
+23	2020-06-03 15:16:22.30325-05
+24	2020-06-03 15:31:10.803712-05
+25	2020-06-04 10:55:57.201291-05
+26	2020-06-05 10:48:09.931079-05
+27	2020-06-05 11:48:27.02118-05
+28	2020-06-05 11:56:01.433717-05
+29	2020-06-05 11:57:44.227516-05
+30	2020-06-05 12:00:27.118842-05
+31	2020-06-05 12:17:39.900408-05
+32	2020-06-05 12:43:08.887653-05
+33	2020-06-05 12:45:57.873552-05
+34	2020-06-05 12:47:34.717681-05
+35	2020-06-05 12:51:57.459695-05
+36	2020-06-05 13:09:36.617251-05
+37	2020-06-05 13:10:57.965398-05
+38	2020-06-05 13:19:10.3708-05
+39	2020-06-09 15:44:55.470539-05
+40	2020-06-11 18:25:42.425428-05
+41	2020-06-11 20:49:34.045419-05
 \.
 
 
@@ -1679,6 +1826,23 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 --
 
 COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", "createdAt") FROM stdin;
+1	8	John	1234	awesome	2020-06-01 11:35:13.717949-05
+2	8	John	1234	awesome	2020-06-01 11:37:10.071898-05
+3	8	John	1234	awesome	2020-06-01 11:38:27.455148-05
+4	8	John	1234	awesome	2020-06-01 12:01:47.22843-05
+5	9	John	1234	awesome	2020-06-01 12:07:15.227336-05
+6	10	John	1234	awesome	2020-06-01 12:27:15.138687-05
+7	11	John	1234	awesome	2020-06-01 12:44:56.205417-05
+8	12	John Smith	1234	123 LearningFuze Lane	2020-06-01 12:55:45.163479-05
+9	13	John Smith	1234	123 LearningFuze Lane	2020-06-01 13:33:20.202651-05
+10	15	logan 	1234567890	LearningFuze Lane\nSan Diego\n	2020-06-03 13:42:07.645323-05
+11	16	John Smith 	123 456 234 789	LearningFuze Lane	2020-06-03 13:44:06.258821-05
+12	17	asdaq	asdas	asd	2020-06-03 13:53:38.810165-05
+13	18	sdfs	asdf	adfs	2020-06-03 13:54:52.567556-05
+14	20	asdasdf	asdasdfasdf	asdfasdf	2020-06-03 13:58:10.74545-05
+15	21	asdfasf	asdfasdf	asdfasdf	2020-06-03 13:59:02.734993-05
+16	24	John Smith 	000 0000 0000 0 000	LearningFuze Lane,\nPasadena, CA	2020-06-03 15:33:05.573926-05
+17	40	asfdasdf	asfdasdf	asdfaf	2020-06-11 19:23:26.571904-05
 \.
 
 
@@ -1687,12 +1851,12 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 --
 
 COPY public.products ("productId", name, price, image, "shortDescription", "longDescription") FROM stdin;
-1	Shake Weight	2999	/images/shake-weight.jpg	Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-2	ShamWow	2595	/images/shamwow.jpg	It's like a chamois, towel, and sponge, all in one! Soaks up to 10x it's weight in any liquid!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-3	Snuggie	2900	/images/snuggie.jpg	Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-4	Wax Vac	999	/images/wax-vac.jpg	Gentle way to remove ear wax. Safe and hygienic. Reduces the risk of painful infections.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-5	Ostrich Pillow	9900	/images/ostrich-pillow.jpg	Create your own snugly space in the world and feel-good anywhere with the ultimate cocoon pillow.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-6	Tater Mitts	830	/images/tater-mitts.jpg	8 Seconds is all you need with Tater Mitts. Quickly and easily prepare all your favorite potato dishes with Tater Mitts.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
+4	Roadie Tumbler	1280	/images/maars-roadie-22-oz-steel-tumbler-new.jpg	22 oz Stainless Steel Tumbler	The Maars Roadie is a 22 oz double wall 18/8 stainless steel thermal bottle with a powder coated finish that protects against chips and scratches. Copper vacuum insulation keeps drinks cold 24hr, hot 12hr. Comes with a solid black PP lid and matching colored straw. Non-toxic and BPA-free.
+2	Maker 20 oz Tumbler	950	/images/maars-maker-20-ounce-skinny-tumbler.jpg	20 oz Stainless Steel Bottle	The Maker 20 oz is the second addition to our Maars Maker family – combining the sleek silhouette of our top selling Skinny Steel with a screw on sip lid. Matching straw included is our updated design that is composed with a new material that makes it flexible while remaining durable (due to this material, we were unable to retain the stopper design). Easily transport hot and cold beverages to the office or around the home. An elevated color palette brings style alongside function; perfect for the modern maker.\n\nCrafted with our high quality, food grade 18/8 stainless steel (304 stainless steel). This material is commonly found in professional kitchens; utilized for its non-porous nature for resistance against bacteria, mold and lingering odors. The 18% chromium and 8% nickel composition makes it less likely to rust or corrode.\n\nEach bottle comes individually boxed for easy gifting and convenient packaging.
+5	Maars Skinny Steel	798	/images/78800_skinny_steel_20oz_group_-_glitter_trio_new_1_.jpg	20 oz Stainless Steel Tumbler	The Maars Skinny Steel is a 20oz double wall 18/8 stainless steel thermal bottle with a powder coated finish that protects against chips and scratches. Copper vacuum insulation keeps drinks cold 24hr, hot 12hr. Comes with a clear push-on lid and matching straw. Non-toxic and BPA-free.
+6	Bev Steel	799	/images/maars-bev-steel-12-oz-wine-tumbler-new.jpg	12 oz Stainless Steel Wine Tumbler	The Maars Bev Steel is a 12 oz double wall 18/8 stainless steel copper coated, vacuum insulated travel tumbler with a powder coated finish that protects against chips and scratches. Comes with a clear push-on lid and matching straw. Non-toxic and BPA-free.
+1	Maker Kids Tumbler	625	/images/maars-maker-12-ounce-kids-sport-bottle.jpg	12 oz Stainless Steel Tumbler	As always, our Maker Kids Bottle is crafted with high quality, food grade 18/8 stainless steel (304 stainless steel). This material is found in professional kitchens since the non-porous nature allows it to resist against bacteria, mold, and lingering odors. The 18% chromium and 8% nickel material composition makes it less likely to rust or corrode. Beautifully designed to last.
+3	Skinny Can cooler	979	/images/maars-can-cooler-12-oz-skinny-can-holder.jpg	12 oz Stainless Steel Can Cooler	Say goodbye to room temperature canned beverages. Our Maars Skinny Can Cooler is designed to hold most popular brand name skinny canned beverages ranging from: hard seltzers, sparkling water, tea, and energy drinks. Screw on lid is equipped with a rubber gasket that securely grips and holds your can in place. Once secured, your drink stays refreshingly chilled sip after sip for up to 12 hours. Slim, condensation free body is finished off with a silver base trim for a stylistic finish resembling the look and feel of your traditional canned beverage.\n\nCrafted with our high quality, food grade 18/8 stainless steel (304 stainless steel). This material is commonly found in professional kitchens; utilized for its non-porous nature for resistance against bacteria, mold and lingering odors. The 18% chromium and 8% nickel composition makes it less likely to rust or corrode. Skinny Can Cooler comes in two finishes – a glitter gloss and a semi matte.\n\nCan Compatibility: White Claw, Truly, Bon and Viv, Red Bull, Smirnoff Seltzer, Corona Extra + Refresca, Michelob Ultra, Guayaki, La Croix, Henry’s, San Pellegrino, Coca Cola Energy, and other slim 12 oz cans (Does not fit Heineken Slim Can)
 \.
 
 
@@ -1700,21 +1864,21 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 1430, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 1545, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 4, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 41, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 1, false);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 17, true);
 
 
 --
