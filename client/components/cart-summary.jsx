@@ -31,7 +31,6 @@ function CartSummary(props) {
       </div>
       <div className="row">
         <h1>My Cart</h1>
-        <h2 className={`${noItemsClass}`}>No Items in your cart.</h2>
       </div>
       <div className="d-flex flex-wrap justify-content-between mt-5">
         {
@@ -40,7 +39,10 @@ function CartSummary(props) {
           })
         }
       </div>
-      <div className="d-flex flex-nowrap justify-content-between">
+      <div className="row rounded white-background shadow d-flex justify-content-center p-2">
+        <h3 className={`${noItemsClass}`}>You have no items in your cart... so sad</h3>
+      </div>
+      <div className="d-flex flex-nowrap justify-content-between row">
         <h3 className="mb-4">{`Item Total: $${(total / 100).toFixed(2)}`}</h3>
         <div>
           <button type="button" onClick={() => props.setView('checkout', {})} className={`btn btn-primary cart-summary-button ${checkoutItemsClass}`}>Checkout</button>
