@@ -119,6 +119,11 @@ display:flex;
   color:white;
 }
 
+.varela {
+  font-family: 'Varela Round', sans-serif;
+  /* font-weight: 400; */
+}
+
 @media screen and (min-width: 375px) {
   .card-width {
   width:100%;

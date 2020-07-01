@@ -27,7 +27,7 @@ export default class Productdetails extends React.Component {
             <img src={this.state.product.image} className="card-img-top product-details-img col-sm-5" alt={this.state.product.name} />
             <div className="col-sm-6 d-flex justify-content-center flex-column align-items-center pl-1">
               <h2 className="card-title">{this.state.product.name}</h2>
-              <h3 className="card-text text-primary">{`$ ${(this.state.product.price / 100).toFixed(2)}`}</h3>
+              <h4 className="card-text">{`$ ${(this.state.product.price / 100).toFixed(2)}`}</h4>
               <p className="card-text text-center">{this.state.product.shortDescription}</p>
               <button type="button" onClick={() => this.props.addToCart(this.state.product)} className="btn btn-primary">Add to Cart</button>
             </div>
