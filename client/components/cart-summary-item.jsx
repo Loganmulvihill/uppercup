@@ -9,7 +9,7 @@ function CartSummaryItem(props) {
         <img className="col-sm-5 mr-2" src={cartItem.image} alt={cartItem.name} />
         <div className="col-sm-6">
           <h1>{cartItem.name}</h1>
-          <h2 className="text-primary">{`$ ${(cartItem.price.toFixed(2)) / (100)}`}</h2>
+          <h2 className="text-primary">{`$ ${(cartItem.price / 100).toFixed(2)}`}</h2>
           <p>{cartItem.shortDescription}</p>
         </div>
       </div>
