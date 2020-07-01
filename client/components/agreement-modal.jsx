@@ -26,7 +26,7 @@ export default class AgreementModal extends React.Component {
         <div className="d-flex justify-content-center flex-column align-content-around agreement-modal-interior-container shadow p-2">
           <h5 className="text-center brand-blue white-text rounded p-3">Welcome to UpperCup!</h5>
           <p className="text-center">I accept that this website is for demonstration purposes only, that no payment processing will happen, and that personal information such as names, addresses or real credit card numbers should not be used on submission of the forms within this website.</p>
-          <div className="mt-3 d-flex justify-content-center">
+          <div className="mt-1 d-flex justify-content-center">
             <form action="" className="d-flex justify-content-center flex-column align-items-center">
               <div className="form-group">
                 <button type="button" onClick={this.props.hideAgreementModal} className="btn shadow-sm align-self-center btn-primary mt-2">
