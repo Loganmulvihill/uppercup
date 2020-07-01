@@ -8,6 +8,12 @@ function CartSummary(props) {
     total += cart[i].price;
   }
 
+  let backgroundClass = null;
+  if (cart.length <= 0) {
+    backgroundClass = 'white-background shadow';
+  } else {
+    backgroundClass = 'display-none';
+  }
   let noItemsClass = null;
   if (cart.length <= 0) {
     noItemsClass = 'display-message';
@@ -32,14 +38,14 @@ function CartSummary(props) {
       <div className="row">
         <h1>My Cart</h1>
       </div>
-      <div className="d-flex flex-wrap justify-content-between mt-5">
+      <div className="d-flex flex-wrap justify-content-between mt-5 row">
         {
           cart.map(cartData => {
             return <CartSummaryItem key={cartData.cartItemId} cartItem={cartData} />;
           })
         }
       </div>
-      <div className="row rounded white-background shadow d-flex justify-content-center p-2">
+      <div className={`row rounded d-flex justify-content-center p-2 ${backgroundClass}`}>
         <h3 className={`${noItemsClass}`}>You have no items in your cart... so sad</h3>
       </div>
       <div className="d-flex flex-nowrap justify-content-between row">
