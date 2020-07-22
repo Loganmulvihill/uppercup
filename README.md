@@ -8,8 +8,8 @@ A Full Stack Node.js and React shopping cart app.
 https://wicked-sales.loganmulvihill.com/
 
 ## Technologies Used
- - HTML
- - CSS
+ - HTML5
+ - CSS3
  - React.js
  - JavaScript (ES6)
  - Node.js
