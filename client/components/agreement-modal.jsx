@@ -30,7 +30,7 @@ export default class AgreementModal extends React.Component {
             <form action="" className="d-flex justify-content-center flex-column align-items-center">
               <div className="form-group">
                 <button type="button" onClick={this.props.hideAgreementModal} className="btn shadow-sm align-self-center btn-primary mt-2">
-                Submit
+                I Accept
                 </button>
               </div>
             </form>
