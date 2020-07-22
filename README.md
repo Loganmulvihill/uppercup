@@ -1,4 +1,4 @@
-# wicked-sales-js
+# uppercup
 > - Maintained by: `loganmulvihill`
 
 ## Description
